@@ -15,49 +15,87 @@
             font-family: 'Courier New', Courier, monospace;
         }
         h2{
-            padding: 50px;
+            padding: 30px;
             margin: 10px;
             border-radius: 30px;
             background-color: rgb(225, 186, 135);
-            max-width: 70%;
+            display: flex;
             font-family: 'Courier New', Courier, monospace;
         }
+        .whole{
+            padding: 10px;
+            margin: 10px;
+            margin-left: 85%;
+            border-radius: 30px; 
+            display: block;
+            background-color: rgb(11, 11, 85);
+            width: 100%;
+            align-items: center;
+            
+        }
+        .box1{
+            padding-left: 40px;
+        }
+        button{
+            background-color: #4c90af; 
+            border: none; 
+            color: white;
+            padding: 5px 12px;
+            text-align: center; 
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer; 
+            border-radius: 8px; 
+            font-family: 'Courier New', Courier, monospace;
+        }   
+        p{
+            padding: 10%;
+            color: white;
+
+        }
+        
+        
+            
         
     </style>
 </head>
 <body>
+    <div class="whole">
+        <h2>Electricity Consumption Checker</h2>
 
-    <h2>Electricity Consumption Checker</h2>
-    <input type="number" id="elec" placeholder="Input Electricity Consumption"><br><br>
-    <button onclick="compute()">COMPUTE</button>
-    <p id="result"></p>
+        <div class="box1">
+            <input type="number" id="elec" placeholder="Input Electricity Consumption"><br><br>
+            <button onclick="compute()">COMPUTE</button>
+            <p id="result"></p>
+        </div>
 
-    <script>
-        function compute() {
-            let elec = parseFloat(document.getElementById("elec").value);
-            let result = "";
+        <script>
+            function compute() {
+                let elec = parseFloat(document.getElementById("elec").value);
+                let result = "";
 
-            if (elec > 0 && elec <= 100) {
-                result = "You are a: Lifeline Consumer<br>Discounted electricity rates";
-            } 
-            else if (elec >= 101 && elec <= 200) {
-                result = "You are a: Low Consumer";
-            } 
-            else if (elec >= 201 && elec <= 300) {
-                result = "You are an: Average Consumer";
-            } 
-            else if (elec >= 301 && elec <= 500) {
-                result = "You are a: High Consumer";
-            } 
-            else if (elec > 500) {
-                result = "You are a: Very High Consumer";
-            } 
-            else {
-                result = "Please enter a valid number";
+                if (elec > 0 && elec <= 100) {
+                    result = "You are a: Lifeline Consumer<br>Discounted electricity rates";
+                } 
+                else if (elec >= 101 && elec <= 200) {
+                    result = "You are a: Low Consumer";
+                } 
+                else if (elec >= 201 && elec <= 300) {
+                    result = "You are an: Average Consumer";
+                } 
+                else if (elec >= 301 && elec <= 500) {
+                    result = "You are a: High Consumer";
+                } 
+                else if (elec > 500) {
+                    result = "You are a: Very High Consumer";
+                } 
+                else {
+                    result = "Please enter a valid number";
+                }
+                document.getElementById("result").innerHTML = result;
             }
-            document.getElementById("result").innerHTML = result;
-        }
-    </script>
-
+        </script>
+    </div>
 </body>
 </html>
